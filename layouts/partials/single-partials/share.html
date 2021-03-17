@@ -20,6 +20,20 @@
         </li>        
     </ul>
 
+    {{ if .IsTranslated }}
+    <div class="sep"></div>
+    <p>{{ i18n "read-in" }}</p>
+
+    <ul>
+        {{ range .Translations}}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Lang }}</a>
+        </li>
+        {{ end }}
+    </ul>
+
+    {{ end }}    
+
     {{ if .Params.comments }}
         <div class="sep">
         </div>				
